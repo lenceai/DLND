@@ -3504,49 +3504,21 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 1,
    "metadata": {
     "scrolled": true
    },
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "[('boll', -4.9698132995760007),\n",
-       " ('uwe', -4.6249728132842707),\n",
-       " ('seagal', -3.6441435602725449),\n",
-       " ('unwatchable', -3.2580965380214821),\n",
-       " ('stinker', -3.2088254890146994),\n",
-       " ('mst', -2.9502698994772336),\n",
-       " ('incoherent', -2.9368917735310576),\n",
-       " ('unfunny', -2.6922395950755678),\n",
-       " ('waste', -2.6193845640165536),\n",
-       " ('blah', -2.5704288232261625),\n",
-       " ('horrid', -2.4849066497880004),\n",
-       " ('pointless', -2.4553061800117097),\n",
-       " ('atrocious', -2.4259083090260445),\n",
-       " ('redeeming', -2.3682390632154826),\n",
-       " ('prom', -2.3608540011180215),\n",
-       " ('drivel', -2.3470368555648795),\n",
-       " ('lousy', -2.3075726345050849),\n",
-       " ('worst', -2.2869878961803778),\n",
-       " ('laughable', -2.2643638801738479),\n",
-       " ('awful', -2.2271942470274348),\n",
-       " ('poorly', -2.2207550747464135),\n",
-       " ('wasting', -2.2046046846338418),\n",
-       " ('remotely', -2.1972245773362196),\n",
-       " ('existent', -2.0794415416798357),\n",
-       " ('boredom', -1.9951003932460849),\n",
-       " ('miserably', -1.9924301646902063),\n",
-       " ('sucks', -1.9870682215488209),\n",
-       " ('uninspired', -1.9832976811269336),\n",
-       " ('lame', -1.981767458946166),\n",
-       " ('insult', -1.9783454248084671)]"
-      ]
-     },
-     "execution_count": 16,
-     "metadata": {},
-     "output_type": "execute_result"
+     "ename": "NameError",
+     "evalue": "name 'pos_neg_ratios' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-1-90f942243e6b>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[1;31m# words most frequently seen in a review with a \"NEGATIVE\" label\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 2\u001b[1;33m \u001b[0mlist\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mreversed\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mpos_neg_ratios\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mmost_common\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;36m0\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;36m30\u001b[0m\u001b[1;33m]\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      3\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      4\u001b[0m \u001b[1;31m# Note: Above is the code Andrew uses in his solution video,\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      5\u001b[0m \u001b[1;31m#       so we've included it here to avoid confusion.\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[1;31mNameError\u001b[0m: name 'pos_neg_ratios' is not defined"
+     ]
     }
    ],
    "source": [

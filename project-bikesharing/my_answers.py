@@ -94,6 +94,7 @@ class NeuralNetwork:
         
         # Weight step (input to hidden)
         delta_weights_i_h += hidden_error_term * X[:,None]
+        delta_weights_i_h += hidden_error_term * X[:,None]
         # Weight step (hidden to output)
         delta_weights_h_o += output_error_term * hidden_outputs[:, None]
         return delta_weights_i_h, delta_weights_h_o

@@ -289,18 +289,30 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 8,
+=======
+   "execution_count": 9,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [],
    "source": [
     "# TODO: Loop over all the words in all the reviews and increment the counts in the appropriate counter objects\n",
     "for i in range(len(reviews)):\n",
     "    if(labels[i] == 'POSITIVE'):\n",
+<<<<<<< HEAD
     "        for word in reviews[i].split(\" \"):\n",
     "            positive_counts[word] += 1\n",
     "            total_counts[word] += 1\n",
     "    else:\n",
     "        for word in reviews[i].split(\" \"):\n",
+=======
+    "        for word in reviews[i].split(' '):\n",
+    "            positive_counts[word] += 1\n",
+    "            total_counts[word] += 1\n",
+    "    else:\n",
+    "        for word in reviews[i].split(' '):\n",
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
     "            negative_counts[word] += 1\n",
     "            total_counts[word] += 1"
    ]
@@ -314,7 +326,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 9,
+=======
+   "execution_count": 10,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -1323,7 +1339,11 @@
        " ...]"
       ]
      },
+<<<<<<< HEAD
      "execution_count": 9,
+=======
+     "execution_count": 10,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1335,7 +1355,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 10,
+=======
+   "execution_count": 11,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -2344,7 +2368,11 @@
        " ...]"
       ]
      },
+<<<<<<< HEAD
      "execution_count": 10,
+=======
+     "execution_count": 11,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2366,15 +2394,23 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 11,
+=======
+   "execution_count": 13,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [],
    "source": [
-    "# Create Counter object to store positive/negative ratios\n",
     "pos_neg_ratios = Counter()\n",
     "\n",
+<<<<<<< HEAD
     "# TODO: Calculate the ratios of positive and negative uses of the most common words\n",
     "#       Consider words to be \"common\" if they've been used at least 100 times\n",
+=======
+    "# Calculate the ratios of positive and negative uses of the most common words\n",
+    "# Consider words to be \"common\" if they've been used at least 100 times\n",
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
     "for term,cnt in list(total_counts.most_common()):\n",
     "    if(cnt > 100):\n",
     "        pos_neg_ratio = positive_counts[term] / float(negative_counts[term]+1)\n",
@@ -2390,7 +2426,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 12,
+=======
+   "execution_count": 14,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -2433,11 +2473,19 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 13,
+=======
+   "execution_count": 15,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [],
    "source": [
     "# TODO: Convert ratios to logs\n",
+<<<<<<< HEAD
+=======
+    "# Convert ratios to logs\n",
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
     "for word,ratio in pos_neg_ratios.most_common():\n",
     "    pos_neg_ratios[word] = np.log(ratio)"
    ]
@@ -2451,7 +2499,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 14,
+=======
+   "execution_count": 16,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -2459,14 +2511,18 @@
      "output_type": "stream",
      "text": [
       "Pos-to-neg ratio for 'the' = 0.05902269426102881\n",
+<<<<<<< HEAD
       "Pos-to-neg ratio for 'amazing' = 1.3919815802404802\n",
+=======
+      "Pos-to-neg ratio for 'aming' = 1.3919815802404802\n",
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
       "Pos-to-neg ratio for 'terrible' = -1.7291085042663878\n"
      ]
     }
    ],
    "source": [
     "print(\"Pos-to-neg ratio for 'the' = {}\".format(pos_neg_ratios[\"the\"]))\n",
-    "print(\"Pos-to-neg ratio for 'amazing' = {}\".format(pos_neg_ratios[\"amazing\"]))\n",
+    "print(\"Pos-to-neg ratio for 'aming' = {}\".format(pos_neg_ratios[\"amazing\"]))\n",
     "print(\"Pos-to-neg ratio for 'terrible' = {}\".format(pos_neg_ratios[\"terrible\"]))"
    ]
   },
@@ -2487,7 +2543,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 15,
+=======
+   "execution_count": 17,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -3496,7 +3556,11 @@
        " ...]"
       ]
      },
+<<<<<<< HEAD
      "execution_count": 15,
+=======
+     "execution_count": 17,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -3508,7 +3572,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 16,
+=======
+   "execution_count": 18,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -3546,7 +3614,11 @@
        " ('insult', -1.978345424808467)]"
       ]
      },
+<<<<<<< HEAD
      "execution_count": 16,
+=======
+     "execution_count": 18,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -3575,7 +3647,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 17,
+=======
+   "execution_count": 19,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -3585,7 +3661,11 @@
        "<IPython.core.display.Image object>"
       ]
      },
+<<<<<<< HEAD
      "execution_count": 17,
+=======
+     "execution_count": 19,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -3600,7 +3680,11 @@
   },
   {
    "cell_type": "code",
+<<<<<<< HEAD
    "execution_count": 18,
+=======
+   "execution_count": 20,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
    "metadata": {},
    "outputs": [
     {
@@ -3610,7 +3694,11 @@
        "<IPython.core.display.Image object>"
       ]
      },
+<<<<<<< HEAD
      "execution_count": 18,
+=======
+     "execution_count": 20,
+>>>>>>> 1e779082edc159b061c228fbc9e3f2fcb2321e4f
      "metadata": {},
      "output_type": "execute_result"
     }
