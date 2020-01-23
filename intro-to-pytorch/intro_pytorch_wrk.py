@@ -106,8 +106,34 @@ print(labels.shape)
 
 plt.imshow(images[1].numpy().squeeze(), cmap='Greys_r');
 
+#%%
+def activation(x):
+    return 1/(1+torch.exp(-x))
 
+inputs = images.view(images.shape[0], -1)
 
+w1 = torch.randn(784, 256)
+b1 = torch.randn(256)
+
+w2 = torch.randn(256, 10)
+b2 = torch.randn(10)
+
+h = activation(torch.mm(inputs, w1) + b1)
+
+out = torch.mm(h, w2) + b2
+
+#%%
+
+## Solution
+def softmax(x):
+    return torch.exp(x)/torch.sum(torch.exp(x), dim=1).view(-1, 1)
+
+probabilities = softmax(out)
+
+# Does it have the right shape? Should be (64, 10)
+print(probabilities.shape)
+# Does it sum to 1?
+print(probabilities.sum(dim=1))
 
 
 
