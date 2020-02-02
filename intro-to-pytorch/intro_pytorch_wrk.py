@@ -136,5 +136,111 @@ print(probabilities.shape)
 print(probabilities.sum(dim=1))
 
 
+#%%  Building networks with PyTorch
 
+from torch import nn
 
+class Network(nn.Module):
+    def __init__(self):
+        super().__init__()
+        
+        # Inputs to hidden layer linear transformation
+        self.hidden = nn.Linear(784, 256)
+        # Output layer, 10 units - one for each digit
+        self.output = nn.Linear(256, 10)
+        
+        # Define sigmoid activation and softmax output 
+        self.sigmoid = nn.Sigmoid()
+        self.softmax = nn.Softmax(dim=1)
+        
+    def forward(self, x):
+        # Pass the input tensor through each of our operations
+        x = self.hidden(x)
+        x = self.sigmoid(x)
+        x = self.output(x)
+        x = self.softmax(x)
+        
+        return x
+
+        
+model = Network()
+print(model)
+#%%
+
+import torch.nn.functional as F
+
+class Network(nn.Module):
+    def __init__(self):
+        super().__init__()
+        # Inputs to hidden layer linear transformation
+        self.hidden = nn.Linear(784, 256)
+        # Output layer, 10 units - one for each digit
+        self.output = nn.Linear(256, 10)
+        
+    def forward(self, x):
+        # Hidden layer with sigmoid activation
+        x = F.sigmoid(self.hidden(x))
+        # Output layer with softmax activation
+        x = F.softmax(self.output(x), dim=1)
+        
+        return x
+
+#%%  Your Turn to Build a Network
+        
+class Network(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc1 = nn.Linear(784, 128)
+        self.fc2 = nn.Linear(128, 64)
+        self.fc3 = nn.Linear(64, 10)
+        
+    def forward(self, x):
+        
+        x = self.fc1(x)
+        x = F.relu(x)
+        x = self.fc2(x)
+        x = F.relu(x)
+        x = self.fc3(x)
+        x = F.softmax(x, dim=1)
+        
+        return x
+
+model = Network()
+print(model)
+
+print(model.fc1.weight)
+print(model.fc1.bias)
+        
+
+print(model.fc1.bias.data.fill_(0))
+
+print(model.fc1.weight.data.normal_(std=0.01))
+
+#%%
+
+dataiter = iter(trainloader)
+images, labels = dataiter.next()
+
+images.resize_(64, 1, 784)
+
+img_idx = 0
+ps = model.forward(images[img_idx,:])
+
+img = images[img_idx]
+helper.view_classify(img.view(1, 28, 28), ps)
+
+print(model[0])
+model[0].weight
+
+from collections import OrderedDict
+model = nn.Sequential(OrderedDict([
+                      ('fc1', nn.Linear(input_size, hidden_sizes[0])),
+                      ('relu1', nn.ReLU()),
+                      ('fc2', nn.Linear(hidden_sizes[0], hidden_sizes[1])),
+                      ('relu2', nn.ReLU()),
+                      ('output', nn.Linear(hidden_sizes[1], output_size)),
+                      ('softmax', nn.Softmax(dim=1))]))
+model
+
+print(model[0])
+print(model.fc1)
