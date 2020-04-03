@@ -10,7 +10,7 @@ def _get_loss_acc(model, train_loader, valid_loader):
     """
     Get losses and validation accuracy of example neural network
     """
-    n_epochs = 2
+    n_epochs = 5
     learning_rate = 0.001
     
     # Training loss
