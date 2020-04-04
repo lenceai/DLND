@@ -91,7 +91,7 @@ def compare_init_weights(
     plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
     plt.show()
 
-    print('After 2 Epochs:')
+    print('After 5 Epochs:')
     print('Validation Accuracy')
     for label, val_acc in label_accs:
         print('  {:7.3f}% -- {}'.format(val_acc*100, label))
@@ -105,5 +105,5 @@ def hist_dist(title, distribution_tensor, hist_range=(-4, 4)):
     Display histogram of values in a given distribution tensor
     """
     plt.title(title)
-    plt.hist(distribution_tensor, np.linspace(*hist_range, num=len(distribution_tensor)/2))
+    plt.hist(distribution_tensor, np.linspace(*hist_range, num=len(distribution_tensor) // 2))
     plt.show()

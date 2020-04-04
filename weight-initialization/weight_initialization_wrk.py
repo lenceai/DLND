@@ -14,6 +14,7 @@ from torchvision import datasets
 import torchvision.transforms as transforms
 from torch.utils.data.sampler import SubsetRandomSampler
 
+
 #%% Load Data
 
 workers = 0
@@ -96,7 +97,22 @@ model_list = [(model_0, 'All Zeros'),
 helpers.compare_init_weights(model_list, 'Zero vs Ones', train_loader, valid_loader)
 
 #%%
-helpers.hist_dist('Random Uniform (low=-3, high=3)', np.random.uniform(-3.0, 3.0, [1000]))
+helpers.hist_dist('Random Uniform (low=-3, high=3)', np.random.uniform(-3, 3, [1000]))
 
+#%% Uniform baseline
 
+def weights_init_uniform(m):
+    classname = m.__class__.__name__
+    if classname.find('Linear') != -1:
+        m.weight.data.uniform_(0.0, 1.0)
+        m.bias.data.fill_(0)
+
+model_uniform = Net()
+model_uniform.apply(weights_init_uniform()
+                    
+helpers.compare_init_weights([(model_uniform, 'Uniform Weights')], 
+                             'Uniform Baseline', 
+                             train_loader,
+                             valid_loader)
+    
 
